@@ -1,48 +1,17 @@
+<meta http-equiv="refresh" content="10" />
+
 <?php
     session_start();
 
     $image = ["FlashCover", "BatmanCover", "MoonKnightCover", "SpiderManCover", "KidFlashCover", "IronManCover", "CaptainAmericaCover", "WolverineCover"];
-    $numimages = 8;
-    $visit = $_SESSION['visit'];
-    if(isset($visit)) {
-            $visit = $visit + 1; 
-        }
-        else {
-            $visit = 1;
-         }
-        
-        if($vist = 1) {
-            $images = $image[0];
-            echo "<img src='/$images.jpg' alt='SuperheroCover' style='float:right;width:600px;height:900px;'>";
-        }
-        elseif($visit = 2) {
-            $images = $image[1];
-            echo "<img src='/$images.jpg' alt='SuperheroCover' style='float:right;width:600px;height:900px;'>";
-        }
-        elseif($visit = 2) {
-            $images = $image[2];
-            echo "<img src='/$images.jpg' alt='SuperheroCover' style='float:right;width:600px;height:900px;'>";
-        }
-        elseif($visit = 2) {
-            $images = $image[3];
-            echo "<img src='/$images.jpg' alt='SuperheroCover' style='float:right;width:600px;height:900px;'>";
-        }
-        elseif($visit = 2) {
-            $images = $image[4];
-            echo "<img src='/$images.jpg' alt='SuperheroCover' style='float:right;width:600px;height:900px;'>";
-        }
-        elseif($visit = 2) {
-            $images = $image[5];
-            echo "<img src='/$images.jpg' alt='SuperheroCover' style='float:right;width:600px;height:900px;'>";
-        }
-        elseif($visit = 2) {
-            $images = $image[6];
-            echo "<img src='/$images.jpg' alt='SuperheroCover' style='float:right;width:600px;height:900px;'>";
-        }
-        else {
-            $images = $image[7];
-            echo "<img src='/$images.jpg' alt='Superhero Cover' style='float:right;width:600px;height:900px;'>";
-        }
+    $rand = rand(0, count($image) - 1);
+    $selectedimage = $image[$rand];
+
+    echo "<img src='/images/$selectedimage.jpg' alt='Superhero Cover' style='float:right;width:600px;height:900px;'>";
+
+?>
+
+
          
 
 ?>
